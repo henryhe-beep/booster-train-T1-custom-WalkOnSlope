@@ -1,4 +1,4 @@
-"""This script demonstrates how to replay K1 robot motions from npz files.
+"""This script demonstrates how to replay T1 robot motions from npz files.
 
 .. code-block:: bash
 
@@ -45,7 +45,7 @@ from isaaclab.utils.assets import ISAAC_NUCLEUS_DIR
 ##
 # Pre-defined configs
 ##
-from booster_train.assets.robots.booster import BOOSTER_K1_CFG
+from booster_train.assets.robots.booster import BOOSTER_T1_CFG
 from booster_train.tasks.manager_based.beyond_mimic.mdp.commands import MotionLoader
 
 
@@ -64,7 +64,7 @@ class ReplayMotionsSceneCfg(InteractiveSceneCfg):
     )
 
     # articulation
-    robot: ArticulationCfg = BOOSTER_K1_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
+    robot: ArticulationCfg = BOOSTER_T1_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
 
 
 def run_simulator(sim: sim_utils.SimulationContext, scene: InteractiveScene):
@@ -96,7 +96,7 @@ def run_simulator(sim: sim_utils.SimulationContext, scene: InteractiveScene):
         raise ValueError("Either --motion or --registry_name must be provided.")
 
     # Load npz file to get body names and determine body_indexes
-    # For K1, we typically use Trunk as anchor body (index 0)
+    # For T1, we typically use Trunk as anchor body (index 0)
     # body_indexes should be a list of indices corresponding to the bodies we want to use
     # For replay, we only need the anchor body (Trunk), which is typically at index 0
     body_indexes = [0]  # Default to index 0 for anchor body (Trunk)
