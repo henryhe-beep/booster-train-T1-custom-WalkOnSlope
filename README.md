@@ -70,7 +70,7 @@ python scripts/rsl_rl/play.py --task Booster-T1-Walk-Custom-v0-Play
 
 ## 📂 项目结构说明
 
-- **核心配置**: `source/booster_train/booster_train/tasks/manager_based/beyond_mimic/robots/t1/walk_custom_slope/`
+- **核心配置**: `source/booster_train/booster_train/tasks/manager_based/Velocity_Tracking/robots/t1/walk_custom_slope/`
   - `tracking_env_cfg.py`: 定义了观测值、奖励函数（速度追踪、姿态维持）和终止条件。
   - `env_cfg.py`: 定义了 T1 机器人资产加载、PD 参数以及斜坡地形生成器。
   - `ppo_cfg.py`: RSL_RL 算法的超参数配置。
