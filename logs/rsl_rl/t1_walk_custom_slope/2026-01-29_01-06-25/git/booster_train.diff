@@ -1,0 +1,53 @@
+--- git status ---
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   source/booster_train/booster_train/assets/robots/booster.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	source/booster_train/booster_train/tasks/manager_based/beyond_mimic/robots/t1/
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/source/booster_train/booster_train/assets/robots/booster.py b/source/booster_train/booster_train/assets/robots/booster.py
+index 47ced15..06993e6 100644
+--- a/source/booster_train/booster_train/assets/robots/booster.py
++++ b/source/booster_train/booster_train/assets/robots/booster.py
+@@ -176,8 +176,8 @@ for a in BOOSTER_K1_CFG.actuators.values():
+         if n in e and n in s and s[n]:
+             K1_ACTION_SCALE[n] = 0.25 * e[n] / s[n]
+ 
+-print(f'{BOOSTER_K1_CFG.actuators=}')
+-print(f'{K1_ACTION_SCALE=}')
++# print(f'{BOOSTER_K1_CFG.actuators=}')
++# print(f'{K1_ACTION_SCALE=}')
+ 
+ 
+ BOOSTER_T1_CFG = ArticulationCfg(
+@@ -329,3 +329,20 @@ BOOSTER_T1_CFG = ArticulationCfg(
+         ),
+     },
+ )
++
++
++T1_ACTION_SCALE = {}
++for a in BOOSTER_T1_CFG.actuators.values():
++    e = a.effort_limit_sim
++    s = a.stiffness
++    names = a.joint_names_expr
++    if not isinstance(e, dict):
++        e = {n: e for n in names}
++    if not isinstance(s, dict):
++        s = {n: s for n in names}
++    for n in names:
++        if n in e and n in s and s[n]:
++            T1_ACTION_SCALE[n] = 0.25 * e[n] / s[n]
++
++print(f'{BOOSTER_T1_CFG.actuators=}')
++print(f'{T1_ACTION_SCALE=}')
