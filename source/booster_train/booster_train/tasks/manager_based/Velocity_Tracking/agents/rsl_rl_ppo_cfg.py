@@ -7,7 +7,7 @@ class BasePPORunnerCfg(RslRlOnPolicyRunnerCfg):
     num_steps_per_env = 24
     max_iterations = 30000
     save_interval = 1000
-    experiment_name = "beyond_mimic"
+    experiment_name = "Velocity_Tracking"
     empirical_normalization = True
     policy = RslRlPpoActorCriticCfg(
         init_noise_std=1.0,

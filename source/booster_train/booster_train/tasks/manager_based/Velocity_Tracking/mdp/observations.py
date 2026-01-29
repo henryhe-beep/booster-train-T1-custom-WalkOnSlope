@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 
 from isaaclab.utils.math import matrix_from_quat, subtract_frame_transforms
 
-from booster_train.tasks.manager_based.beyond_mimic.mdp.commands import MotionCommand
+from booster_train.tasks.manager_based.Velocity_Tracking.mdp.commands import MotionCommand
 
 if TYPE_CHECKING:
     from isaaclab.envs import ManagerBasedEnv

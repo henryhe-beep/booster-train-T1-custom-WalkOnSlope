@@ -18,7 +18,7 @@ from isaaclab.utils.noise import AdditiveUniformNoiseCfg as Unoise
 
 # 注意：这里我们同时引入 Isaac Lab 原生的 mdp 和 booster 特有的 mdp
 import isaaclab.envs.mdp as mdp 
-import booster_train.tasks.manager_based.beyond_mimic.mdp as booster_mdp
+import booster_train.tasks.manager_based.Velocity_Tracking.mdp as booster_mdp
 
 @configclass
 class MySceneCfg(InteractiveSceneCfg):

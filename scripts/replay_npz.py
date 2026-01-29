@@ -46,7 +46,7 @@ from isaaclab.utils.assets import ISAAC_NUCLEUS_DIR
 # Pre-defined configs
 ##
 from booster_train.assets.robots.booster import BOOSTER_T1_CFG
-from booster_train.tasks.manager_based.beyond_mimic.mdp.commands import MotionLoader
+from booster_train.tasks.manager_based.Velocity_Tracking.mdp.commands import MotionLoader
 
 
 @configclass
